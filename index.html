@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
 
+<meta charset="UTF-8">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Hololens Object Tracking Dataset</title>
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Hololens Object Tracking Dataset" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Cayman is a clean, responsive theme for GitHub Pages." />
-<meta property="og:description" content="Cayman is a clean, responsive theme for GitHub Pages." />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Hololens Object Tracking Dataset" />
@@ -20,13 +17,14 @@
 {"@context":"https://schema.org","@type":"WebSite","description":"Collecting and Benchmarking ego-centric object tracking-style data","headline":"Hololens Object Tracking Dataset","name":"Hololens Object Tracking Dataset","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style"
+  type="text/css" crossorigin>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#157878">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="/assets/css/style.css?v=">
+<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
 
@@ -36,32 +34,117 @@
 <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
 
 <!-- end custom head snippets -->
+<head>
+  <style>
+    .image-container {
+      text-align: center;
+    }
+  </style>
+</head>
 
-  </head>
-  <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
+<body>
+  <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-    <header class="page-header" role="banner">
-      <h1 class="project-name">Hololens Object Tracking Dataset</h1>
-      <h2 class="project-tagline">Collecting and Benchmarking ego-centric object tracking-style data</h2>
-      
-        <a href="test.zip" class="btn">Download Bedroom Scene</a>
-        <a href="test.zip" class="btn">Download UAV Lab Scene</a>
-        <a href="test.zip" class="btn">Download Kitchen Scene</a>
-        <a href="test.zip" class="btn">Download Rocket Lab Scene</a>
-        <a href="test.zip" class="btn">Download Kitchen Scene 2</a>
-    </header>
+  <header class="page-header" role="banner">
+    <h1 class="project-name">Hololens Object Tracking Dataset</h1>
+    <h2 class="project-tagline">Collecting and Benchmarking ego-centric object tracking-style data</h2>
 
-    <main id="content" class="main-content" role="main">
+    <a href="https://drive.google.com/drive/folders/1iCrFkM48sqZSxFenPQAfgtn75_0ZSvfE?usp=sharing" class="btn">Link to
+      the Dataset</a>
+  </header>
 
-    <p>We have 12 scenes in total with 5 sequences collected per scene. This leaves us with 60 sequences total.</p>
+  <main id="content" class="main-content" role="main">
 
-    <h1 id="header-1">Header 1</h1>
+    <p>This site hosts a 3d object tracking dataset focused on working with egocentric data. We utilize the Microsoft Hololens2 and its vast sensor suite to collect 12 different scenes. In addition, we will provide 3 types of annotations 
+      to work with. The first annotation per-frame 3d object location. The second annotation is an object's binary state of static/dynamic where "static" pertains to an object not moving and a "dynamic" state referring to an
+    object currently being interacted by the camera wearer. The third annotation is the per-frame bounding box in each sequence. </p>
 
-    <div class="parentDiv"> 
-    <img src="vid2.gif" width="1000%"> 
-    </div> 
+    <h1>EgoTrack3D Available Data</h3>
+    <div style="display:grid; grid-template-columns: 1fr 1fr;">
+      <div>
+        <h2>Sensor Suite</h2>
+        <ul>
+          <li>1 RGB Camera (1280x720) @ 30 fps</li>
+          <li>4 VLC Grayscale Cameras (640x480) @ 30 fps</li>
+          <li>1 ToF Camera Ahat (512x512) @ 45 fps and Longthrow (320x288) @ 5 fps</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Additional Estimated Information</h2>
+        <ul>
+          <li>Base Map</li>
+          <li>Camera Pose</li>
+          <li>Sensor Intrinsics/Extrinsics</li>
+        </ul>
+      </div>
+    </div>
 
-    </main>
-  </body>
+    <div class="image-container">
+      <img src="data_annot_visuals_v3.png" alt="Centered A Div">
+    </div>
+
+    <div class="image-container">
+      <img src="basemaps.png" alt="Centered A Div">
+    </div>
+
+    <h1>Scene Information</h1>
+    <p> For each scene we collect 5 regular sequences and 1 SLAM sequence. All sensors are collected to use its most recent information relative to the RGB camera. Each sequence is around 5 minutes each</p>
+    <div style="display:grid; grid-template-columns: 1fr 1fr;">
+      <div>
+        <h2>Regular Sequence</h2>
+        <ul>
+          <li>Base map (.obj)</li>
+          <li>All sensor poses (.json)</li>
+          <li>Sensor data (.png) </li>
+          <li>ToF uses Ahat (512x512) @ 45 fps </li>
+        </ul>
+      </div>
+      <div>
+        <h2>SLAM Sequence</h2>
+        <ul>
+          <li>Base map (.obj)</li>
+          <li>All sensor poses (.json)</li>
+          <li>Sensor data (.png) </li>
+          <li>ToF uses Longthrow (320x288) @ 5 fps </li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 id="header-1">Display of Example Sequence</h1>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1px;">
+      <div>
+        <img src="vid2_pv.gif" height="200">
+      </div>
+
+      <div>
+        <img src="vid2_ahat.gif" height="200">
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1px;">
+      <div>
+        <img src="vid2_ll.gif" height="200">
+      </div>
+
+      <div>
+        <img src="vid2_lf.gif" height="200">
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1px;">
+      <div>
+        <img src="vid2_rf.gif" height="200">
+      </div>
+
+      <div>
+        <img src="vid2_rr.gif" height="200">
+      </div>
+    </div>
+
+    
+
+  </main>
+</body>
+
 </html>
