@@ -50,22 +50,24 @@
     <!-- <h2 class="project-tagline">Collecting and Benchmarking ego-centric 3D object tracking</h2> -->
 
     <a href="https://drive.google.com/drive/folders/1z0_ruw9VuNdNvHzClmwwcbXu5AmtNYSr?usp=sharing" class="btn">Link to
-      the Dataset</a>
+      the Demo Dataset</a>
   </header>
 
   <main id="content" class="main-content" role="main">
 
-    <p>This site hosts a 3d object tracking dataset focused on working with egocentric data. We utilize the Microsoft Hololens2 and its vast sensor suite to collect 12 different scenes. In addition, we will provide 3 types of annotations 
-      to work with. The first annotation per-frame 3d object location. The second annotation is an object's binary state of static/dynamic where "static" pertains to an object not moving and a "dynamic" state referring to an
-    object currently being interacted by the camera wearer. The third annotation is the per-frame bounding box in each sequence. </p>
+    <p>This is the official website for EgoTrack3D benchmark that explores the problem of tracking 3D objects in egocentric videos.
+      EgoTrack3D dataset includes 50 videos captured from 14 different scenes using HoloLens2. 
+      We provide 3 types of annotations to support the study. The first annotation is per-frame 3d object locations in a predefined world coordinate. 
+      The second annotation is the object's binary state of static/dynamic where "static" pertains to an object not moving and a "dynamic" state refers to an object currently being interacted with the camera wearer. 
+      The third annotation is the per-frame 2D bounding boxes of object instances. The full dataset will be released upon acceptance. </p>
 
     <h1>EgoTrack3D Dataset Details</h3>
     <div style="display:grid; grid-template-columns: 1fr 1fr;">
       <div>
         <h2>Sensor Data</h2>
         <ul>
-          <li>1 RGB Camera (1280x720) @ 30 fps</li>
-          <li>4 Grayscale Cameras (640x480) @ 30 fps</li>
+          <li>1 RGB Camera (720x1280) @ 30 fps</li>
+          <li>4 Grayscale Cameras (480x640) @ 30 fps</li>
           <li>1 ToF Camera AHAT (512x512) @ 45 fps (synced to 30 fps)</li>
         </ul>
       </div>
@@ -89,32 +91,35 @@
         <img src="demo_mesh.png" alt="Centered A Div">
       </div>
 
-<!--     <h1>Scene Information</h1>
-    <p> For each scene we collect 5 regular sequences and 1 SLAM sequence. All sensors are collected to use its most recent information relative to the RGB camera. Each sequence is around 5 minutes each</p>
-    <div style="display:grid; grid-template-columns: 1fr 1fr;">
-      <div>
-        <h2>Regular Sequence</h2>
-        <ul>
-          <li>Base map (.obj)</li>
-          <li>All sensor poses (.json)</li>
-          <li>Sensor data (.png) </li>
-          <li>ToF uses Ahat (512x512) @ 45 fps </li>
-        </ul>
-      </div>
-      <div>
-        <h2>SLAM Sequence</h2>
-        <ul>
-          <li>Base map (.obj)</li>
-          <li>All sensor poses (.json)</li>
-          <li>Sensor data (.png) </li>
-          <li>ToF uses Longthrow (320x288) @ 5 fps </li>
-        </ul>
-      </div>
-    </div> -->
 
     <h1 id="header-1">Additional Video Data Visualizations</h1>
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 5px;">
+      <div>
+        <img src="vid2_pv.gif" height="250">
+      </div>
 
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1px;">
+      <div>
+        <img src="vid2_ahat.gif" height="250">
+      </div>
+
+      <div>
+        <img src="vid2_ll.gif" height="250">
+      </div>
+
+      <div>
+        <img src="vid2_lf.gif" height="250">
+      </div>
+
+      <div>
+        <img src="vid2_rf.gif" height="250">
+      </div>
+
+      <div>
+        <img src="vid2_rr.gif" height="250">
+      </div>
+    </div>
+
+    <!-- <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1px;">
       <div>
         <img src="vid2_pv.gif" height="200">
       </div>
@@ -142,10 +147,9 @@
       <div>
         <img src="vid2_rr.gif" height="200">
       </div>
-    </div>
+    </div> -->
 
     
-
   </main>
 </body>
 
